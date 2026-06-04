@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+
+
+	<!-- replace all instances ( in texts ) of
+	- character | replacement
+	- "&"		| "^"
+	- newline	| "<br/>"
+		-->
+		
+	
+<pictures>
+	
+	<mp3s>
+		<mp3 number="1" path="resources/mp3/geniet.MP3"/>
+		<mp3 number="2" path="resources/mp3/geniet2.MP3"/>
+	</mp3s>
+	
+	<searchimages>
+		
+		<searchimage number="1" defscale="1" path="resources/scrollimages/schuifplaat2.JPG"/>
+		<searchimage number="2" defscale="2" path="resources/scrollimages/enormewereld.png"/>
+		<searchimage number="3" defscale="1" path="resources/scrollimages/888.jpg"/>
+		<searchimage number="4" defscale="1" path="resources/scrollimages/ioio.JPG"/>
+	</searchimages>	
+	
+	<picture image_path="resources/pictures/kleurvol.jpg" thumb_path="resources/pictures/kleurvol.jpg">
+		<name scale_percentage="100"><![CDATA[Charles Bukowski]]></name>
+	</picture>
+
+	<picture image_path="resources/pictures/zwartmeisje.jpg" thumb_path="resources/pictures/zwartmeisje.jpg">
+		<name scale_percentage="100"><![CDATA[Charles Bukowski]]></name>
+	</picture>
+
+	<picture image_path="resources/pictures/nacht.jpg" thumb_path="resources/pictures/nacht.jpg">
+		<name scale_percentage="100"><![CDATA[Charles Bukowski]]></name>
+	</picture>
+
+	<picture image_path="resources/pictures/oxop.jpg" thumb_path="resources/pictures/oxop.jpg">
+		<name scale_percentage="100"><![CDATA[Charles Bukowski]]></name>
+	</picture>	
+	
+	<picture image_path="resources/pictures/sofialuna2010.jpg" thumb_path="resources/pictures/sofialuna2010.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>		
+	
+	
+	<picture image_path="resources/pictures/sofialucia2010.jpg" thumb_path="resources/pictures/sofialucia2010.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>			
+	
+	<picture image_path="resources/pictures/harengeknipt2010.jpg" thumb_path="resources/pictures/harengeknipt2010.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>			
+		
+	<picture image_path="resources/pictures/ballerina.jpg" thumb_path="resources/pictures/ballerina.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>		
+
+	<picture image_path="resources/pictures/vliegeren1.jpg" thumb_path="resources/pictures/vliegeren1.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>				
+	
+	<picture image_path="resources/pictures/vliegeren2.jpg" thumb_path="resources/pictures/vliegeren2.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>				
+
+	<picture image_path="resources/pictures/vliegeren3.jpg" thumb_path="resources/pictures/vliegeren3.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>					
+
+	<picture image_path="resources/pictures/ijsisop_paarseogen.jpg" thumb_path="resources/pictures/ijsisop_paarseogen.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>		
+	
+	<picture image_path="resources/pictures/ijsisop_groen.jpg" thumb_path="resources/pictures/ijsisop_groen.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>		
+
+	<picture image_path="resources/pictures/ijsisop_smurf.jpg" thumb_path="resources/pictures/ijsisop_smurf.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>		
+
+	<!--
+	<picture image_path="resources/pictures/avd2012.jpg" thumb_path="resources/pictures/avd2012.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>		
+	-->
+
+	<picture image_path="resources/pictures/ijsjeisop.jpg" thumb_path="resources/pictures/ijsjeisop.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>	
+
+
+	<picture image_path="resources/pictures/axce-fgty56jkiih78yu.jpg" thumb_path="resources/pictures/axce-fgty56jkiih78yu.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>	
+
+
+	<picture image_path="resources/pictures/johan.jpg" thumb_path="resources/pictures/johan.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>	
+
+	<picture image_path="resources/pictures/DSC_0356-copy.jpg" thumb_path="resources/pictures/DSC_0356-copy.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>	
+	
+	<picture image_path="resources/pictures/DSC_0391-copy.jpg" thumb_path="resources/pictures/DSC_0391-copy.jpg">
+		<name scale_percentage="100"><![CDATA[]]></name>
+	</picture>		
+	
+</pictures>
+	
+	

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<global>
+	<sreensaver_trigger_after time_ms="10000"/>
+	<xml_refresh time_ms="50000"/>
+	<zoomed_image_zoomout_after time_ms="15000"/>
+	<drag_image_delay time_ms="200"/><!-- if (mouseup-mousedown time) is smaller it's interpreted as a click, otherwise it's interpreted as a drag -->
+	
+	<background_image path="resources/background_nature7.jpg"/>
+</global>
+	
+	
