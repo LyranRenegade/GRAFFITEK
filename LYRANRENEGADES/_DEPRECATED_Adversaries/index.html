@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	
+	<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<title>LyranRenegades.net</title>
+        
+        
+        
+        <!-- FONTS -->
+        
+        <link rel="stylesheet" href="../_fonts/roboto_mono_medium/stylesheet.css" type="text/css" charset="utf-8" />        
+        <link rel="stylesheet" href="../_fonts/roboto_mono_thin/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="../_fonts/roboto_mono_regular/stylesheet.css" type="text/css" charset="utf-8" />
+        
+        <!--
+        <link rel="stylesheet" href=".../_fonts/arial_narrow_bold/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/arial_narrow_bolditalic/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/arial_narrow_italic/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/arial_narrow_regular/stylesheet.css" type="text/css" charset="utf-8" />
+        
+        
+        <link rel="stylesheet" href="_fonts/roboto_mono_bold/stylesheet.css" type="text/css" charset="utf-8" />
+        
+        <link rel="stylesheet" href="_fonts/opensans_bold_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/opensans_bolditalic_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/opensans_extrabold_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/opensans_extrabolditalic_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/opensans_italic_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/opensans_light_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/opensans_lightitalic_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/opensans_regular_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/opensans_semibold_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/opensans_semibolditalic_macroman/stylesheet.css" type="text/css" charset="utf-8" />
+        -->
+        
+        
+        <!-- FONT NAMES
+            open_sansbold
+            open_sansbold_italic
+            open_sansextrabold
+            open_sansextrabold_italic
+            open_sansitalic
+            open_sanslight
+            open_sanslight_italic
+            open_sansregular
+            open_sanssemibold
+            open_sanssemibold_italic
+        -->
+        
+        
+        
+        <style>
+
+		* {
+		    margin:0;
+		    padding:0;
+		} 
+
+		html, body {
+		    width:100%;
+		    height:100%;
+                    overflow-x: hidden;
+                    
+                    scrollbar-face-color: #000000;
+                    scrollbar-shadow-color: #2D2C4D;
+                    scrollbar-highlight-color:#7D7E94;
+                    scrollbar-3dlight-color: #7D7E94;
+                    scrollbar-darkshadow-color: #2D2C4D;
+                    scrollbar-track-color: #7D7E94;
+                    scrollbar-arrow-color: #C1C1D1;
+		}
+                
+            
+                
+                
+                #parentdiv {
+                    position: absolute;
+                }
+
+                    
+                canvas {
+                    position: fixed;
+                    left: 0px;
+                    right: 0px;
+                }
+                
+
+
+                
+                .unselectable {
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    cursor: default;
+                }
+                a { color: inherit; } 
+                
+                ::-webkit-scrollbar
+                {
+                  width: 12px;  /* for vertical scrollbars */
+                  height: 12px; /* for horizontal scrollbars */
+                }
+
+                ::-webkit-scrollbar-track
+                {
+                  background: rgba(0, 0, 0, 0.1);
+                }
+
+                ::-webkit-scrollbar-thumb
+                {
+                  background: rgba(0, 0, 0, 0.5);
+                }                
+	</style>    
+        
+    <script type="text/javascript" src="../_js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="../_js/managers/FrameThread.js"></script>
+    <script type="text/javascript" src="../_js/gimmicks/LettersToStacey.js"></script>
+    <script type="text/javascript" src="../_js/managers/MouseHandler.js"></script>
+    
+    <script type="text/javascript">
+        
+        var delay = 63;
+        var counter = 0;
+        var LTS;
+        var FRAMETHREAD;
+        var MOUSEHANDLER;
+        
+        function _changeClock () {
+            //console.log ( 'changeclock' );
+            
+            counter ++;
+            if ( Math.random () * counter > delay ) {
+                counter = 0;
+                _setClock ();
+            }
+        }
+        
+        function _setClock () {
+            var d = new Date();
+            var t = d.getTime ();
+
+            var time = 1588825173364;
+
+            //console.log ( t );
+            $ ( "#clock" ).html ( "-" + String ( ( time - t ) / 3.33 ) + "-" );            
+        }
+        
+        function pageIntro () {
+            console.log ( "pageintro" );
+            var html = "<p style='font-family: courier; font-size: 12px;text-align:center;color:white; position: absolute; top: 50%; left: 50%; margin: 0px; transform: translateY(-50%) translateX(-50%);'>";
+            html += "LyranRenegades.net";
+            html += "<br/><span style='color:#ff0000'>>> tune in at summer 2020</span>";
+            html += "<br/><span id='clock' style='color:#cc00ff'>---</span>";
+            html += "</p>";
+            
+            $ ( "#parentdiv" ).append ( html );
+            _setClock ();
+            FRAMETHREAD = new FrameThread ();
+            FRAMETHREAD.startLooping ( true );
+            
+            $ ( document ).on ( "frameTick", $.proxy ( this, "_changeClock" ) );
+        }
+        
+        window.addEventListener ( "load", function () {	
+            _startLetters ();
+             /*pageIntro ();*/ 
+         }, false );
+    
+    
+    
+    
+         function _startLetters () {
+            LTS = new LettersToStacey (); 
+            MOUSEHANDLER = new MouseHandler ();
+             
+            var html = "<p id='lts' style='font-family: roboto_mono_thin; font-size: 12px;text-align:left;color:white; position: absolute; top: 15%; left: 15%; margin: 0px; transform: translateY(-8%) translateX(-8%);'>";
+            //html += "<br/><span style='color:#ff0000'>>> tune in at summer 2020</span>";
+            html += "<br/><span id='ltsTitle' style='color:#c0c0b0;'>---</span>";
+            html += "<br/><span id='ltsText' style='color:#f0f0e0'>---</span>";
+            html += "<br/><span id='ltsFooter' style='color:#f0f0e0;float:right'>---</span>";
+            html += "<br/><br/>";
+            
+            html += "<br/><br/><br/><br/>";
+            
+            html += "<span id='buttons'>"; 
+            html += "<span id='past'><i>< eerder</i></span>";
+            html += "<span id='future' style='float:right;'><i>later ></i></span>";
+            html += "<br/><br/></span>";
+            
+            html += "</p>";
+            
+            $ ( "#parentdiv" ).append ( html );
+             
+            this._enableButton ( "past", false, false );
+            this._enableButton ( "future", true, false );
+             
+            $ ( "#lts" ).css ({
+                cursor: "default"
+            });
+            
+            $ ( "#lts" ).addClass ( "unselectable" );
+             _openLetter ( 1 );
+             
+             
+         }
+    
+         function _openLetter ( x ) {
+             var html = LTS.getLetter ( x );
+             
+             $ ( "#ltsTitle" ).html ( html.title );  
+             $ ( "#ltsText" ).html ( html.text );  
+             $ ( "#ltsFooter" ).html ( html.footer );  
+             
+         }
+         
+         this._enableButton = function ( spanid, b ) {
+            //MAIN.log ( "textparser enable button for " + spanid + ", " + b );
+            var cursor = "default";
+            $ ( "#" + spanid ).off ( MOUSEHANDLER.MOUSEOVER, $.proxy ( this, "_WLmouseOver" ) );
+            $ ( "#" + spanid ).off ( MOUSEHANDLER.MOUSEOUT, $.proxy ( this, "_WLmouseOut" ) );
+            $ ( "#" + spanid ).off ( MOUSEHANDLER.CLICK, $.proxy ( this, "_WLmouseClick" ) );         
+            if ( b ) {
+                $ ( "#" + spanid ).on ( MOUSEHANDLER.MOUSEOVER, $.proxy ( this, "_WLmouseOver" ) );
+                $ ( "#" + spanid ).on ( MOUSEHANDLER.MOUSEOUT, $.proxy ( this, "_WLmouseOut" ) );
+                $ ( "#" + spanid ).on ( MOUSEHANDLER.CLICK, $.proxy ( this, "_WLmouseClick" ) );                
+                cursor = "pointer";
+            }
+
+            var opacity = b? ".8" : ".5";
+            //var textdecoration = selected? "underline" : "none";
+            //var fontstyle = selected? "normal" : "italic";
+
+            $ ( "#" + spanid ).css ({
+                opacity: opacity,
+                /*textDecoration: textdecoration,*/
+                /*fontStyle: fontstyle,*/
+                cursor: cursor
+            });
+
+        };
+
+        this._WLmouseOver = function ( e ) {
+            //MAIN.log ( "_WLmouseOver " + e.currentTarget.id );
+            $ ( "#" + e.currentTarget.id ).css ( { 
+                //opacity: this.wl_opacity_over,
+                //textDecoration: "underline"
+                opacity: "1"
+            });            
+        };
+        this._WLmouseOut = function ( e ) {
+            $ ( "#" + e.currentTarget.id ).css ( { 
+                //opacity: this.wl_opacity_out,
+                //textDecoration: "none"
+                opacity: ".8"
+            });            
+        };    
+        this._WLmouseClick = function ( e ) {
+            //var word = $ ( e.currentTarget ).text ();
+            //NAVIGATIONMANAGER.openWordLink ( e.currentTarget.id, word );
+            console.log ( "going to the " + e.currentTarget.id );
+
+            //this._WLmouseOut ( e );
+        };           
+    
+         
+    
+    
+    </script>
+        
+        
+</head>
+
+
+
+
+
+
+<body bgcolor=#000000">
+    
+
+    <div id="cnv_container" style="top:0px; left: 0px; height: 100%; width: 100%; position: fixed; z-index: 1">
+        <!--<canvas id="overlay1" width="3600" height="100" style="z-index: 12;"></canvas>-->
+        <canvas id="cnv_layer1" style="z-index: 1;"></canvas>
+        
+    </div>
+    
+    
+    <div id="parentdiv" style="top:0px; width: 100%; height:100%; left: 0%; color: #ffffff; z-index: 8">
+        
+        
+    </div>
+    
+
+	
+</body>
+</html>
+        
+        
+        
+        
