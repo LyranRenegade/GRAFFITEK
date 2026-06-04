@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	
+	<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<title>(¯`·._ Quintessent _.·´¯)</title>
+        
+        
+        
+        <!-- FONTS -->
+        
+        <link rel="stylesheet" href="_fonts/arial_narrow_bold/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/arial_narrow_bolditalic/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/arial_narrow_italic/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/arial_narrow_regular/stylesheet.css" type="text/css" charset="utf-8" />
+        
+        <link rel="stylesheet" href="_fonts/julee_regular/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/quattrocento_regular/stylesheet.css" type="text/css" charset="utf-8" />
+        
+        <!--
+        <link rel="stylesheet" href="_fonts/roboto_mono_thin/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/roboto_mono_regular/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/roboto_mono_medium/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="_fonts/roboto_mono_bold/stylesheet.css" type="text/css" charset="utf-8" />
+        -->
+ 
+        
+        
+        <!-- FONT NAMES
+            open_sansbold
+            open_sansbold_italic
+            open_sansextrabold
+            open_sansextrabold_italic
+            open_sansitalic
+            open_sanslight
+            open_sanslight_italic
+            open_sansregular
+            open_sanssemibold
+            open_sanssemibold_italic
+        -->
+        
+        
+        
+        <style>
+
+		* {
+		    margin:0;
+		    padding:0;
+		} 
+
+		html, body {
+		    width:100%;
+		    height:100%;
+                    overflow-x: hidden;
+                    
+                    scrollbar-face-color: #000000;
+                    scrollbar-shadow-color: #2D2C4D;
+                    scrollbar-highlight-color:#7D7E94;
+                    scrollbar-3dlight-color: #7D7E94;
+                    scrollbar-darkshadow-color: #2D2C4D;
+                    scrollbar-track-color: #7D7E94;
+                    scrollbar-arrow-color: #C1C1D1;
+		}
+                
+            
+                
+                
+                #parentdiv {
+                    position: absolute;
+                }
+
+                    
+                canvas {
+                    position: fixed;
+                    left: 0px;
+                    right: 0px;
+                }
+                
+
+
+                
+                .unselectable {
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    cursor: default;
+                }
+                a { color: inherit; } 
+                
+                ::-webkit-scrollbar
+                {
+                  width: 12px;  /* for vertical scrollbars */
+                  height: 12px; /* for horizontal scrollbars */
+                }
+
+                ::-webkit-scrollbar-track
+                {
+                  background: rgba(0, 0, 0, 0.1);
+                }
+
+                ::-webkit-scrollbar-thumb
+                {
+                  background: rgba(0, 0, 0, 0.5);
+                }                
+	</style>    
+        
+        <script type="text/javascript" src="_js/jquery-3.1.0.min.js"></script>
+        
+        
+	<!-- UTILS -->
+        
+        
+        
+        
+        <script type="text/javascript" src="_js/ObjectUtils.js"></script>
+        <script type="text/javascript" src="_js/Base64.js"></script>
+        <script type="text/javascript" src="_js/DisplayUtils.js"></script>
+          
+	<script type="text/javascript" src="_js/AudioUtils.js"></script>
+        <script type="text/javascript" src="_js/BrowserDetect.js"></script>
+        <script type="text/javascript" src="_js/Data.js"></script>
+        
+        
+        <!-- animations -->
+        
+        <script type="text/javascript" src="_js/animations/LogoAnimation.js"></script>
+        <script type="text/javascript" src="_js/Cascade.js"></script>
+        <script type="text/javascript" src="_js/TextParser.js"></script>
+        <!--
+        <script type="text/javascript" src="_js/ButtonSetDIV.js"></script>
+        
+        
+        <script type="text/javascript" src="_js/D3.js"></script>
+        <script type="text/javascript" src="_js/AnimatorController.js"></script>
+        <script type="text/javascript" src="_js/ServerData.js"></script>
+        <script type="text/javascript" src="_js/Camera.js"></script>
+        
+        <script type="text/javascript" src="_js/TextTicker.js"></script>
+        
+        -->
+        
+        <script type="text/javascript" src="_js/ContentTeacher.js"></script>
+        
+        <script type="text/javascript" src="_js/CustomScrollbar.js"></script>
+        <script type="text/javascript" src="_js/TooltipManager.js"></script>
+        <script type="text/javascript" src="_js/Main.js"></script>
+        <script type="text/javascript" src="_js/MouseHandler.js"></script>
+        <script type="text/javascript" src="_js/Mouse.js"></script>
+        <script type="text/javascript" src="_js/TextUtils.js"></script>
+        <script type="text/javascript" src="_js/MainPage.js"></script>
+        
+        <script type="text/javascript" src="_js/Init.js"></script>
+        
+        
+        
+</head>
+
+
+
+
+
+
+<body>
+    
+
+    <div id="canvascontainer" style="top:0px; left: 0px; height: 100%; width: 100%; position: fixed; z-index: 1">
+        <!--<canvas id="overlay1" width="3600" height="100" style="z-index: 12;"></canvas>-->
+        <canvas id="background" style="z-index: 1;"></canvas>
+        <canvas id="homepage" style="z-index: 40;"></canvas>        
+        <canvas id="logocanvas1" style="z-index: 41;"></canvas> 
+        <canvas id="logocanvas2" style="z-index: 42;"></canvas> 
+        <canvas id="logocanvas3" style="z-index: 43;"></canvas> 
+        
+    </div>
+    
+    <!--<div id="hiddendiv" style="display:none;top:0px; width: 0%; left: 0%; color: #ffffff; z-index: 1"></div>-->
+    <div id="parentdiv" style="top:0px; width: 100%; left: 0%; color: #ffffff; z-index: 8"></div>
+
+    <div id="tooltipdiv" style="position:absolute;top:0px;left: 0%; color: #ffffff; z-index: 20"></div>
+    <!-- <div id="parentdiv2" style="top:0px; width: 100%; left: 0%; color: #ffffff; z-index: 11"></div> -->
+    
+    
+
+	
+</body>
+</html>
+        
+        
+        
+        
