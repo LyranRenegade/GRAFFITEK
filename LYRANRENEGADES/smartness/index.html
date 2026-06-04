@@ -1,0 +1,517 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Earth Anno 2021: An Apocalyptic Tale of SMARTNESS</title>
+
+        <!-- FONTS -->
+        
+        <link rel="stylesheet" href="FONTS/mvboli/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="FONTS/lato_black/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="FONTS/lato_bold/stylesheet.css" type="text/css" charset="utf-8" />
+        <link rel="stylesheet" href="FONTS/lato_regular/stylesheet.css" type="text/css" charset="utf-8" />
+
+        
+        
+        
+     <style>
+
+		* {
+		    margin:0;
+		    padding:0;
+		} 
+
+		html, body {
+		    width:100%;
+		    height:100%;
+                    overflow-x: hidden;
+                    
+                    scrollbar-face-color: #000000;
+                    scrollbar-shadow-color: #2D2C4D;
+                    scrollbar-highlight-color:#7D7E94;
+                    scrollbar-3dlight-color: #7D7E94;
+                    scrollbar-darkshadow-color: #2D2C4D;
+                    scrollbar-track-color: #7D7E94;
+                    scrollbar-arrow-color: #C1C1D1;
+		}
+                
+            
+                
+                
+                #parentdiv {
+                    position: absolute;
+                }
+
+                    
+                canvas {
+                    position: fixed;
+                    left: 0px;
+                    right: 0px;
+                }
+                
+
+
+                
+                .unselectable {
+                    -webkit-touch-callout: none;
+                    -webkit-user-select: none;
+                    -khtml-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    cursor: default;
+                }
+                a { color: inherit; } 
+                
+                ::-webkit-scrollbar
+                {
+                  width: 12px;  /* for vertical scrollbars */
+                  height: 12px; /* for horizontal scrollbars */
+                }
+
+                ::-webkit-scrollbar-track
+                {
+                  background: rgba(0, 0, 0, 0.1);
+                }
+
+                ::-webkit-scrollbar-thumb
+                {
+                  background: rgba(0, 0, 0, 0.5);
+                }                
+	</style>    
+ 
+        <!-- JQUERY -->
+        <script type="text/javascript" src="JS/jquery-3.1.0.min.js"></script>
+        <script type="text/javascript" src="JS/MouseHandler.js"></script>
+        <script type="text/javascript" src="JS/helpers.js"></script>
+        <script type="text/javascript" src="JS/ObjectUtils.js"></script>
+        <script type="text/javascript" src="JS/DisplayUtils.js"></script>
+        <script type="text/javascript" src="JS/HeaderCanvas.js"></script>
+        <script type="text/javascript" src="JS/FooterCanvas.js"></script>
+        
+	<script type='text/javascript'>
+                
+                this.headerheight = 95;
+                this.footerheight = 120;
+                
+                this.index = 0;
+                this.indices = [
+                    { ver: 0.1, img_id: "1", title: "let's start here", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "2", title: "lucky are they indeed", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "3", title: "what happened before", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "4", title: "what might happen next", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "5", title: "economy is what matters", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "6", title: "the fruits of life", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "7", title: "smartness must increase", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "8", title: "mind = blown", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "9", title: "all will be clear", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "9b", title: "and we will know all", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "10", title: "corona", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "11", title: "many explanations", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "12", title: "many more explanations", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "12b", title: "all the explanations you'll ever need", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "13", title: "it has all been explained", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "14", title: "so there you go", month: "11", year: "2021" },
+                    { ver: 0.1, img_id: "15", title: "a little respect please", month: "12", year: "2021" },
+                    { ver: 0.1, img_id: "16", title: "much happiness", month: "12", year: "2021" },
+                    { ver: 0.1, img_id: "17", title: "how to look at things", month: "12", year: "2021" },
+                    { ver: 0.1, img_id: "18", title: "people are very good at thinking", month: "12", year: "2021" },
+                    { ver: 0.1, img_id: "19", title: "irony is a dead scene", month: "12", year: "2021" },
+                    { ver: 0.1, img_id: "20", title: "living in a fast lane", month: "12", year: "2021" },
+                    { ver: 0.1, img_id: "21", title: "presents for everybody", month: "12", year: "2021" },
+                    { ver: 0.4, img_id: "22", title: "circular time", month: "12", year: "2021" },
+                    { ver: 0.1, img_id: "23", title: "sad but true", month: "12", year: "2021" },
+                    { ver: 0.2, img_id: "24", title: "the emperor DOES wear clothes after all", month: "12", year: "2021" }
+                ];
+                this.buttonids = [];
+                this.butclrDef = "666666";//"#ffcc33";
+                this.butclrDef2 = "#ffffff";
+                this.butclrSel = "#ffffff";
+                this.butclrSel2 = "#666666";
+                this.activeImgId = "";
+                HEADERCANVAS = null;
+                FOOTERCANVAS = null;
+                this.lightcolor = "#e0bfff";
+                
+                
+                function start () {
+                    MOUSEHANDLER = new MouseHandler ();
+                    MOUSEHANDLER.initialize ();                    
+                    
+                    window.addEventListener ( "resize", function () {	
+                            _resizeEvent ();
+                     }, false );
+
+        
+                    var q = getUrlVars ();
+                    var i = 0;
+                    if ( q.i ) {
+                        console.log ( "query: " + q + "i: " + i );
+                        i = q.i;
+                    }
+                    _buildHtml ( i );
+                    
+                    _resizeEvent ();
+                   
+                    $ ( document ).keyup ( $.proxy ( this, "_keyUp" ));
+                }
+
+                function _keyUp ( e ) {
+                    console.log ( "keyup: " + e.keyCode );
+                    if ( e.keyCode == "37" ) {
+                        this.goBack ();
+                    }
+                    if ( e.keyCode == "39" ) {
+                        this.goForward ();
+                    }                    
+                }
+
+		function _buildHtml ( index ) {
+			var w = window.innerWidth;
+			var h = window.innerHeight;
+			this.index = index;
+			
+                        var hcHeight = this.headerheight;
+                        HEADERCANVAS = new HeaderCanvas ();
+                        var hc = HEADERCANVAS.create ( "hc", w, hcHeight );
+                        $ ( "#parentdiv" ).append ( hc );
+                        
+                        
+                        this.butclrDef = HEADERCANVAS.headercolorD;
+                        this.butclrDef2 = HEADERCANVAS.headercolor;
+                        this.butclrSel = HEADERCANVAS.headercolor;
+                        this.butclrSel2 = HEADERCANVAS.headercolorD;
+                
+                
+			var divheader = "<div style='width:100%" + "" + ";margin:0px;top:" + hcHeight + "px;position:absolute;'>";
+                        //divheader += "<span style=\"font-family:'lato_black';color:#c91053;font-size:80;\"><i>Lyran<font style='color:#5310c9'>Renegades</font></i></span><br/>";                        
+                        //divheader += "<span style=\"font-family:'lato_black';color:#666666;font-size:34;\">EARTH @2021: An Apocalyptical Tale about SMARTNESS</span>";
+                        //divheader += "<hr id='hrtop' color='#333333'>";
+                        divheader += "<div style='width: 50%; margin: 0 auto;'>";
+                        divheader += "<span id='buttonbar' style=\"font-family:'lato_bold';color:#ffcc33;font-size:12;\"></span>";
+                        divheader += "</div>";
+                        //divheader += "<hr id='hrbottom' color='#333333'>";
+                        divheader += "</div>";
+                        
+                        $ ( "#parentdiv" ).append ( divheader );
+			//_addBreaks ( 2 );
+                        
+                        var img_id = this.indices [ index ].img_id;
+                        
+                        
+                        var imgHTML = "<div id='imagediv' style='position:absolute;top:141px;display:table-cell;width:100%;vertical-align:middle;margin:0;left:-1px;'>";
+                        imgHTML += "<img id='mainimage' src='COLLECTION1/Page" + img_id + ".jpg' style='width:100%;border-top: 1px solid " + this.lightcolor + ";border-bottom: 1px solid " + this.lightcolor + ";'/>";
+                        imgHTML += "</div>";
+                        
+                        $ ( "#parentdiv" ).append ( imgHTML );
+
+                        var dateHTML = "<p id='datespan' style='text-align:left;position:absolute;width:100%;font-family:lato_regular;color:" + this.lightcolor + ";font-size:10;'>DATE</p>";
+                        $ ( "#parentdiv" ).append ( dateHTML );
+                        var contHTML = "<p id='contspan' style='text-align:right;position:absolute;width:100%;font-family:lato_regular;color:" + this.lightcolor + ";font-size:10;'>DATE2</p>";
+                        $ ( "#parentdiv" ).append ( contHTML );
+                        
+                        $ ( "#mainimage" ).on ( "load", function() {
+                            console.log ( "IMAGE LOADED" );
+                            _setDatePosition ();
+                            //$ ( this ).stop ( true, true ).fadeOut ();
+                            $ ( "#mainimage" ).fadeIn ( 500, false );
+                        });
+                                
+                
+                        /*.each ( function () {
+                            if ( this.complete ) {
+                                $(this).load(); // For jQuery < 3.0 
+                                $(this).trigger('load'); // For jQuery >= 3.0 
+                            }
+                        });                        */
+                        
+
+                        
+                        FOOTERCANVAS = new FooterCanvas ();
+                        var fc = FOOTERCANVAS.create ( "fc", w, this.footerheight );
+                        $ ( "#parentdiv" ).append ( fc );
+                        
+                        
+                        var i;
+                        var il = this.indices.length;
+                        var butHTML, butid;
+                        
+                        for ( i = 0; i < il ; i ++ ) {
+                            butid = "but_" + this.indices [ i ].img_id;
+                            butHTML = "<span id='" + butid + "'>" + this.indices [ i ].img_id + "</span>&nbsp;";
+                            $ ( "#buttonbar" ).append ( butHTML );
+                            setButtonAble ( "#" + butid, true, false );
+                            this.buttonids.push ( butid );
+                        }
+                            
+                        $ ( "#buttonbar" ).append ( "<span id='BACK'><</span>&nbsp;" );
+                        $ ( "#buttonbar" ).append ( "<span id='FORWARD'>></span>&nbsp;" );
+                        $ ( "#buttonbar" ).addClass ( "unselectable" );
+                        this._setImage ( "but_" + img_id );
+                        //this._setButtonSelect ( "but_" + img_id );
+			
+                        $ ( "#BACK" ).css ( {
+                            position: "relative",
+                            top: "4px"
+                        });
+                        $ ( "#FORWARD" ).css ( {
+                            position: "relative",
+                            top: "4px"
+                        });                        
+                        $ ( "#buttonbar" ).css ( {
+                            position: "relative",
+                            top: "-6px"
+                        });     
+                        $ ( "#hrbottom" ).css ( {
+                            position: "relative",
+                            top: "-3px"
+                        });      
+                        $ ( "#hrtop" ).css ( {
+                            position: "relative",
+                            top: "4px"
+                        });        
+                        
+                                                
+		}		
+
+                this.setButtonAble = function ( bid, b, backfwd ) {
+                    $ ( bid ).off ( MOUSEHANDLER.MOUSEOVER );
+                    $ ( bid ).off ( MOUSEHANDLER.MOUSEOUT );
+                    $ ( bid ).off ( MOUSEHANDLER.MOUSEDOWN );
+                    var cursor = "default";
+                    var clr = b? this.butclrDef : this.butclrSel;
+                    var td = b? "none" : "underline";
+                    td = "none";
+                    var fs = 22;
+                    
+                    if ( backfwd ) {
+                        td = "none";
+                        clr = b? this.butclrDef : this.butclrSel2;
+                        fs = 28;
+                    }
+                    
+                    if ( b ) {
+                        cursor = "pointer";
+                        $ ( bid ).on ( MOUSEHANDLER.MOUSEOVER, $.proxy ( this, "_mouseOver" ) );
+                        $ ( bid ).on ( MOUSEHANDLER.MOUSEOUT, $.proxy ( this, "_mouseOut" ) );
+                        $ ( bid ).on ( MOUSEHANDLER.MOUSEDOWN, $.proxy ( this, "_mouseDown" ) );
+                    }
+
+                    $ ( bid ).css ( "cursor", cursor );
+                    $ ( bid ).css ( "fontSize", fs );
+                    $ ( bid ).css ( "color", clr );
+                    if ( !backfwd ) {
+                        $ ( bid ).css ( "textDecoration", td );
+                        
+                    }
+                };
+
+    
+                this._mouseOver = function ( e ) {
+                    var target = e.target || e.srcElement;
+                    var id = target.id;
+                    if ( id === "FORWARD" || id === "BACK" ) {
+                        $ ( "#" + id ).css ( {
+                           color: this.butclrDef2
+                        });
+                    }
+                    else {
+                        $ ( "#" + id ).css ( {
+                            color: this.butclrSel
+                           //textDecoration: "underline" 
+                        });
+                    }
+                };
+    
+                this._mouseOut = function ( e ) {
+                    var target = e.target || e.srcElement;
+                    var id = target.id;
+                    if ( id === "FORWARD" || id === "BACK" ) {
+                        $ ( "#" + id ).css ( {
+                           color: this.butclrDef
+                        });
+                    }
+                    else {                    
+                        $ ( "#" + id ).css ( {
+                            color: this.butclrDef
+                           //textDecoration: "none" 
+                        });
+                    }
+                };
+    
+                this._mouseDown = function ( e ) {
+                    var target = e.target || e.srcElement;
+                    var id = target.id;
+                    if ( id === "FORWARD" ) {
+                        goForward ( e );
+                    }
+                    else if ( id === "BACK" ) {
+                        goBack ( e );
+                    }
+                    else {                         
+                        _setImage ( id );
+                    }
+                };    
+    
+                this.goForward = function ( e ) {
+                    var i;
+                    var il = this.indices.length;
+                    var butid = "but_";
+                    for ( i = 0; i < il; i ++ ) {
+                         if ( this.indices [ i ].img_id == this.activeImgId ) {
+                             break;
+                         }
+                     }
+                     if ( i == ( il - 1 ) ) {
+                         console.log ( "cannot go forward from here" );
+                     }
+                     else {
+                        butid += this.indices [ i + 1 ].img_id;
+                        _setImage ( butid );
+                        if ( e != null ) if ( i + 1 < il - 1 ) this._mouseOver ( e );
+                    }
+                }
+                
+                this.goBack = function ( e ) {
+                    var i;
+                    var il = this.indices.length;
+                    var butid = "but_";
+                    for ( i = 0; i < il; i ++ ) {
+                        if ( this.indices [ i ].img_id == this.activeImgId ) {
+                            break;
+                        }
+                    }
+                    if ( i == 0 ) {
+                        console.log ( "no going back from here" );
+                    }
+                    else {
+                        butid += this.indices [ i - 1 ].img_id;
+                        _setImage ( butid );
+                        if ( e != null ) if ( i - 1 > 0 ) this._mouseOver ( e );
+                        
+                    }
+                }                
+    
+    
+    
+                this._setButtonSelect = function ( but_id ) {
+                    console.log ( "setbuttonselect"+ but_id );
+                    var i;
+                    var bl = this.buttonids.length;
+                    var bid2;
+                    for ( i = 0; i < bl; i ++ ) {
+                        bid2 = this.buttonids [ i ];
+                        this.setButtonAble ( "#" + bid2, ( but_id !== bid2 ), false );
+                    }
+                    
+                    this.setButtonAble ( "#BACK", ( but_id !== this.buttonids [ 0 ] ), true );
+                    this.setButtonAble ( "#FORWARD", ( but_id !== this.buttonids [ bl - 1 ] ), true );
+                    
+                };
+                
+    
+		function _setImage ( but_id ) {
+                    var li = but_id.lastIndexOf ( "_" );
+                    var img_id = but_id.substring ( li + 1 );
+                    var img = _getImageFromId ( img_id );
+                    
+                    console.log ( "placeimage"+ img_id + " ver: " + img.ver );
+                    
+                    $ ( "#mainimage" ).css ( "display", "none" );
+                    //$ ( "#mainimage" ).fadeOut ( 500, false );
+                    $ ( "#mainimage" ).attr ( "src", "COLLECTION1/Page" + img_id + ".jpg?ver=" + img.ver );
+                    this.activeImgId = img_id;
+                    this._setButtonSelect ( but_id );
+                    
+                    
+                    if ( img != null ) {
+                        FOOTERCANVAS.setTitle ( img.title );
+                        
+                        $ ( "#datespan" ).html ( "lyranrenegades.net // " + img.month + "-" + img.year );
+                        
+                    }
+                    var cont = "";
+                    if ( img_id == this.indices [ this.indices.length - 1 ].img_id ) {
+                        cont = "..to be continued"
+                    }
+                    $ ( "#contspan" ).html ( cont );
+                    
+		};
+		
+
+                function _getImageFromId ( id ) {
+                    var i;
+                    var il = this.indices.length;
+                    for ( i = 0; i < il; i ++ ) {
+                        if ( this.indices [ i ].img_id == id ) {
+                            return this.indices [ i ];
+                        }
+                    }
+                    return null;
+                };
+                
+
+
+
+
+
+
+		
+		function _resizeEvent () {
+                    if ( HEADERCANVAS !== null ) {
+                        HEADERCANVAS.redraw ( window.innerWidth );
+                    }
+                    if ( FOOTERCANVAS !== null ) {
+                        FOOTERCANVAS.redraw ( window.innerWidth );
+                    }
+                    FOOTERCANVAS.canvas.style.top = window.innerHeight - 100;
+                    
+                    if (  $( "#mainimage" ).height () > 2 ) {
+                        _setDatePosition ();
+                    }
+                    
+                    return;
+			var w = window.innerWidth;
+			var h = window.innerHeight;
+			console.log ( "w / h: " + w + " / " + h );
+                        
+                        $ ( "#imagediv" ).css ( {
+                                height: h - this.headerheight
+                        } );
+		
+		}
+                
+                function _setDatePosition () {
+                    var p = $( "#imagediv" ).position ();
+                    var dt = p.top + $( "#mainimage" ).height () + 2;
+                    console.log ( "image h: " + $( "#mainimage" ).height () );
+                    
+                    $ ( "#datespan" ).css ( {
+                        top: dt + "px"
+                    });                    
+                    $ ( "#contspan" ).css ( {
+                        top: dt + "px"
+                    });                       
+                    
+                }
+
+		
+		
+		
+	</script>
+
+</head>
+
+<body bgcolor='#031040' onload='start ()'>
+    <div id="bgimage" style="top:0px; width: 100%;opacity:0.3;height:100%;left: 0%;z-index: 8;background-image: url('spez.jpg');"></div>
+    <div id="parentdiv" style="top:0px; width: 100%;left: 0%; color: #ffffff; z-index: 8;">
+    </div>        
+    
+    <div id="tooltipdiv" style="position:absolute;top:0px;left: 0%; color: #ffffff; z-index: 50"></div>
+
+
+
+
+</body>
+
+</html>
