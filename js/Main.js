@@ -67,12 +67,12 @@ var GlobalData = function () {
     
     this.HL_CLR1 = "#FFFF99";//"#fff800";//
     this.HL_CLR2 = "#cccccc";//"#05e937";//
-    this.HL_CLR3 = "#ff33cc";//"#FA3E54";//"#F5001D";
+    this.HL_CLR3 = "#ff99cc";//"#FA3E54";//"#F5001D";
     this.HL_CLR4 = "#ffff33";
-    this.HL_CLR5 = "#cc99ff";
-    this.DL_CLR1 = "#6600ff";//"#059a25";//
-    this.DL_CLR2 = "#339900";//"#9e055c";//
-    this.DL_CLR3 = "#330099";
+    this.HL_CLR5 = "#ffccff";
+    this.DL_CLR1 = "#ff00ff";//"#059a25";//
+    this.DL_CLR2 = "#99ff33";//"#9e055c";//
+    this.DL_CLR3 = "#cc33ff";
     
     this.NEWS_BACKGROUND_ALPHA = 0.6;
     

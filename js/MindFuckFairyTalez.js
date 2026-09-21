@@ -76,7 +76,7 @@ var Mfft = function () {
         "ascend", "enlighten", "enlightenment", "euphoria", "eureka", "cheer", "glee", "genial", "geniality", "sanctity", "play",
         "playing", "playful", "playfulness", "paradise", "mirth", "merry", "merriment", "hilarity", "seventh", "ecstasy",
         "exhilaration", "exhhilarating", "nihil", "nihilism", "elated", "exuberance", "to", "to", "too", "at", "in",
-        "Asgard", "Tuoni", "tuonela", "sisu", "shaman", "guru", "shamanic", "ritual", "rite", "abracadabra", "hocus pocus",
+        "Asgard", "Tuoni", "tuonela", "sisu", "shaman", "guru", "ritual", "rite", "abra", "cadabra", "hocus", "pocus",
         "transport", "Yeshua", "Yoshua", "Aleph", "atom"
         
     ];
@@ -459,7 +459,7 @@ var Mfft = function () {
             $ ( "#mindfuckcanvas1" ).fadeOut ( 100, false );
             
         }
-        
+        this.CONTINUES_FUNCTION = false;
         this.BASE_TEXTTICKER.setActive ( this.active );
         this.MF_TEXTTICKER.setActive ( this.active );
     };
