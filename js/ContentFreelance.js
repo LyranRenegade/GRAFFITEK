@@ -16,18 +16,18 @@ var ContentFreelance = function () {
     
     
     this.textlines = [ 
-        "Sovereign<<<<<<<<vr. #Simon van Gerwen#; Freelance Computerprogrammer. $Autodidact!!!$<<< since 16<531<<<<I WAS BORN!!<<<<<<<<<<<<2002<3.",
+        "(!)Sovereign<<<<<<<<vr. #Simon van Gerwen#; Freelance Computerprogrammer. $Autodidact!!!$<<< since 16<531<<<<I WAS BORN!!<<<<<<<<<<<<2002<3.",
         "Computer-languages -- ------ -- <<<<<<<<<<<<<in order of expertise [pretty basic to high]:",
         "[pretty] BASIC, ColdFusion, ASP, Prolog, SQL, HTML???<<<<<<<not a language!!<<<<<<<<<<<<<<<<<<, C / C++, PHP, JAVA[script], ActionScript 1<2<3.000<<<0 ..",
         "--------------------------------------------------------------------------------------------",
-        "Studied $Mathematics$ & %Artificial Intelligence% [offical], [A bit of journalism as well].",
-        "Unofficial topics include LSD<<<Philosophy, DMT<<<seX<<<!<Metaphysics, Esotericism, Linguistics, aaa<<<Formal Logic.",
-        "AI: Neural Networks, Evolutionary Algorithms, etc.",
+        "Studied $Mathematics$ & %Artificial Intelligence% [offical], [journalism,art,etc.].",
+        "Unofficial topics include LSD<<<Philosophy, DMT<<<!<Metaphysics, Esotericism, Linguistics, aaa<<<Formal Logic.",
+        "AI: Neural Networks, Evolutionary Algorithms, uhuh<<<<etc.",
         "if ( /</<B ! x || {}) { pushh<<<<<<<<<<<<<<<<<<<<<<<<<--------------------------------------------------",
         "Contact me for work on computer-gamez!!!<<<, AI, #advanced# internet-programming, tantra-~<<<<<<<<Creative Writing, Troubleshooting....<<",
-        "and just if you need some FREAKING BrAiNs!! RIGHT!?<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<...<<<ok..<<<<<",
+        "ok..<<<<<",
         "E: >^SVG@< AT screwthecia<<<<<<<<<<<GRAFFITEK.nl^> // Tilburg, Ze<<The High<<<<Netherlands.",
-        "Sofia, I %LOVE% you!<!!<<<<<<<<<<<<<<<<<<<|end of transmission .. .  .   .    .     .|<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< "
+        "ONE LOVE<<<<<<<<<<|end of transmission .. .  .   .    .     .|<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< "
         
     ];
     this.linklabels = [ { label: "emailme", rect: { x: 0, y: 0, w: 0, h: 0 } } ];    

@@ -61,14 +61,14 @@ var GlobalData = function () {
     this.CLR_VERYDARKGREY = "#333333";
     //http://colorschemedesigner.com/csd-3.5/#2K32Pw0w0w0w0
     
-    this.HL_CLR1 = "#FFCD00";//"#fff800";//
-    this.HL_CLR2 = "rgb(205,255,0)";//#2DD700";//"#05e937";//
-    this.HL_CLR3 = "#f105bd";//"#FA3E54";//"#F5001D";
-    this.HL_CLR4 = "#b0ff05";
-    this.HL_CLR5 = "#b170db";
-    this.DL_CLR1 = "rgb(3,77,205)";//#0000ff";//"#3016B0";//"#059a25";//
-    this.DL_CLR2 = "#1D8B00";//"#9e055c";//
-    this.DL_CLR3 = "#190773";
+    this.HL_CLR1 = "#FFFF00";//"#FFCD00";//"#fff800";//
+    this.HL_CLR2 = "rgb(255,255,0)";//#2DD700";//"#05e937";//
+    this.HL_CLR3 = "#ff00ff";//"#FA3E54";//"#F5001D";
+    this.HL_CLR4 = "#ccff00";
+    this.HL_CLR5 = "#33FFFF";
+    this.DL_CLR1 = "rgb(0,99,255)";//#0000ff";//"#3016B0";//"#059a25";//
+    this.DL_CLR2 = "#33cc00";//"#9e055c";//
+    this.DL_CLR3 = "#330099";
     
     this.NEWS_BACKGROUND_ALPHA = 0.6;
     

@@ -21,7 +21,7 @@ var MAINFOOTER = null;
 var MFFT = null;
 
 var FRAMECOUNTER = 0;
-var FRAMEDELAY = 2;
+var FRAMEDELAY = 1;
 var FIRSTVISIT = true;
 
 
@@ -65,11 +65,11 @@ var GlobalData = function () {
     this.CLR_DARKGREY = "#666666";
     //http://colorschemedesigner.com/csd-3.5/#2K32Pw0w0w0w0
     
-    this.HL_CLR1 = "#FFCD00";//"#fff800";//
-    this.HL_CLR2 = "#2DD700";//"#05e937";//
-    this.HL_CLR3 = "#f105bd";//"#FA3E54";//"#F5001D";
-    this.HL_CLR4 = "#b0ff05";
-    this.HL_CLR5 = "#b170db";
+    this.HL_CLR1 = "#FFFF99";//"#fff800";//
+    this.HL_CLR2 = "#cccccc";//"#05e937";//
+    this.HL_CLR3 = "#ff33cc";//"#FA3E54";//"#F5001D";
+    this.HL_CLR4 = "#ffff33";
+    this.HL_CLR5 = "#cc99ff";
     this.DL_CLR1 = "#3016B0";//"#059a25";//
     this.DL_CLR2 = "#1D8B00";//"#9e055c";//
     this.DL_CLR3 = "#190773";
