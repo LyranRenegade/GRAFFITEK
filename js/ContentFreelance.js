@@ -17,14 +17,14 @@ var ContentFreelance = function () {
     
     this.textlines = [ 
         "(!)Sovereign<<<<<<<<vr. #Simon van Gerwen#; Freelance Computerprogrammer. $Autodidact!!!$<<< since 16<531<<<<I WAS BORN!!<<<<<<<<<<<<2002<3.",
-        "Computer-languages -- ------ -- <<<<<<<<<<<<<in order of expertise [pretty basic to high]:",
+        /*"Computer-languages -- ------ -- <<<<<<<<<<<<<in order of expertise [pretty basic to high]:",*/
         "[pretty] BASIC, ColdFusion, ASP, Prolog, SQL, HTML???<<<<<<<not a language!!<<<<<<<<<<<<<<<<<<, C / C++, PHP, JAVA[script], ActionScript 1<2<3.000<<<0 ..",
         "--------------------------------------------------------------------------------------------",
-        "Studied $Mathematics$ & %Artificial Intelligence% [offical], [journalism,art,etc.].",
-        "Unofficial topics include LSD<<<Philosophy, DMT<<<!<Metaphysics, Esotericism, Linguistics, aaa<<<Formal Logic.",
+        "$Mathematics$ & %Artificial Intelligence%, [journalism,art,etc.].",
+        "LSD<<<Philosophy, DMT<<<!<Metaphysics, Esotericism, Linguistics, aaa<<<Formal Logic.",
         "AI: Neural Networks, Evolutionary Algorithms, uhuh<<<<etc.",
         "if ( /</<B ! x || {}) { pushh<<<<<<<<<<<<<<<<<<<<<<<<<--------------------------------------------------",
-        "Contact me for work on computer-gamez!!!<<<, AI, #advanced# internet-programming, tantra-~<<<<<<<<Creative Writing, Troubleshooting....<<",
+        /*"Contact me for work on computer-gamez!!!<<<, AI, #advanced# internet-programming, tantra-~<<<<<<<<Creative Writing, Troubleshooting....<<",*/
         "ok..<<<<<",
         "E: >^SVG@< AT screwthecia<<<<<<<<<<<GRAFFITEK.nl^> // Tilburg, Ze<<The High<<<<Netherlands.",
         "ONE LOVE<<<<<<<<<<|end of transmission .. .  .   .    .     .|<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< "

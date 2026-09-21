@@ -3,7 +3,7 @@
 var MainFooter = function () {
     
     
-    this.textlines = [ "`>I'VE GOT A SLOW PC>`    `>TEXT OPTIONS>`    `TEXT-SPEED:` as intended    `>LYRANRENEGADES.NET>`    " ];
+    this.textlines = [ "`>nope>`  `>fr-sn>`  `>LYRANRENEGADES.NET>`    " ];
     this.linklabels = [ { label: "slowpc", rect: { x: 0, y: 0, w: 0, h: 0 } }, { label: "freakysnot", rect: { x: 0, y: 0, w: 0, h: 0 } }, { label: "lyranrenegades", rect: { x: 0, y: 0, w: 0, h: 0 } } ];
     this.TEXTTICKER = null;
     
@@ -32,6 +32,7 @@ var MainFooter = function () {
 
     this._clickFreakySnot = function () {
         log ( "_clickFreakySnot" );
+        MFFT.CONTINUES_FUNCTION = !MFFT.CONTINUES_FUNCTION;
     };    
     
     this._clickLyranRenegades = function () {

@@ -304,11 +304,14 @@ var TextTicker = function ( linklabels, textlines, ctxid ) {
             var currenttextline = this.textlines [ caretindex.line ];
             if ( caretindex.index >= ( currenttextline.length - 1 ) ) {
                 if ( caretindex.line >= ( this.textlines.length - 1 ) ) {
-                    //log ( "cf text ready..!" );
+                    log ( "cf text ready..!" );
                     this.allshown = true;
                     lastrun = true;
                     //this._installLinks ();
                     this.setActive ( false );
+                    /*UGLY HACK DONT ASK*/
+                    MFFT.TextTickerSaysImDone ();
+                    
                 }
                 else {
                     caretindex.removed = 0;

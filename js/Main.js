@@ -70,9 +70,9 @@ var GlobalData = function () {
     this.HL_CLR3 = "#ff33cc";//"#FA3E54";//"#F5001D";
     this.HL_CLR4 = "#ffff33";
     this.HL_CLR5 = "#cc99ff";
-    this.DL_CLR1 = "#3016B0";//"#059a25";//
-    this.DL_CLR2 = "#1D8B00";//"#9e055c";//
-    this.DL_CLR3 = "#190773";
+    this.DL_CLR1 = "#6600ff";//"#059a25";//
+    this.DL_CLR2 = "#339900";//"#9e055c";//
+    this.DL_CLR3 = "#330099";
     
     this.NEWS_BACKGROUND_ALPHA = 0.6;
     

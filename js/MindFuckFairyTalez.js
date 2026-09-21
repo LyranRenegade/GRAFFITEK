@@ -76,11 +76,22 @@ var Mfft = function () {
         "ascend", "enlighten", "enlightenment", "euphoria", "eureka", "cheer", "glee", "genial", "geniality", "sanctity", "play",
         "playing", "playful", "playfulness", "paradise", "mirth", "merry", "merriment", "hilarity", "seventh", "ecstasy",
         "exhilaration", "exhhilarating", "nihil", "nihilism", "elated", "exuberance", "to", "to", "too", "at", "in",
-        "Asgard", "Tuoni", "tuonela", "shisu", "shaman", "guru", "shamanic", "ritual", "rite", "abracadabra", "hocus pocus",
+        "Asgard", "Tuoni", "tuonela", "sisu", "shaman", "guru", "shamanic", "ritual", "rite", "abracadabra", "hocus pocus",
         "transport", "Yeshua", "Yoshua", "Aleph", "atom"
         
     ];
     
+
+    this.CONTINUES_FUNCTION = false;
+
+    this.TextTickerSaysImDone = function () {
+        log ( "TextTickerSaysImDone" );
+        if ( this.CONTINUES_FUNCTION ) {
+            this.tellStory ( 0 );
+        };
+        
+    };
+
     this.WORDAMOUNT;
     
     this.letterfrequencies = [
@@ -112,7 +123,7 @@ var Mfft = function () {
         /*z*/ 0.076
     ];
     
-    this.basetextlines = [ "^..RANDOM COMS..<<^", "|*****<<****<<****<<<**<<<<<**<<<<<<|" ];// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< " ];
+    this.basetextlines = [ "`..rancom]..<<`", "|*****<<****<<****<<<**<<<<<**<<<<<<|" ];// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< " ];
      /*
      * RESERVED SIGNS
      * ^: CLR_1
@@ -192,9 +203,13 @@ var Mfft = function () {
         var colorchar;
         var wi;
         var ended;
+
+        var TMP_WORD_RAN_AMOUNT = this.CONTINUES_FUNCTION? 22 : 8;
+       
+
         for ( i = 0; i < aos; i ++ ) {
             sentence = "";
-            aow = 1 + Math.floor ( 8 * Math.random () );
+            aow = 1 + Math.floor ( TMP_WORD_RAN_AMOUNT * Math.random () );
             for ( j = 0; j < aow; j ++ ) {
                 word = "";
                 aol = 2 + Math.floor ( 8 * Math.random () );

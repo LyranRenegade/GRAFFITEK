@@ -72,7 +72,7 @@ var ContentNews = function () {
         
         //creates a div newsparagraph and attaches it to newscontent, returns the quotes, id = "newsparagraph"
         
-        /*      
+              
         
         var BLOG_NEWNEWS = new BLOG_newnews ( "newscontent" );
         var newsanchors = this._installAnchors ( BLOG_NEWNEWS.contentid, "newsanchors" );
@@ -97,7 +97,7 @@ var ContentNews = function () {
         
         this.setTopic ( this.ID_MSM );
         //this._setNewQuote ();
-        */
+        
         this.TEXTTICKER.initialize ();
         
         this._hideOrShow ();
@@ -408,7 +408,7 @@ var ContentNews = function () {
     
     
     this._hideOrShow = function () {
-        this.active = ( MAINMENU.currentTopic === "#button_" + MAINMENU.NEWSTAG );
+        this.active = false;// MAINMENU.currentTopic === "#button_" + MAINMENU.NEWSTAG );
         this.quoteshown = 0;
         
         $ ( document ).off ( "textChange", $.proxy ( this, "_updateScrollbar" ) );

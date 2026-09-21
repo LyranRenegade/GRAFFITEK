@@ -7,10 +7,11 @@ var MainMenu = function () {
     this.currentTopic = "NONE";
     
     
-    this.FREELANCETAG = "FreeLancing";
-    this.NEWSTAG = "README_txt";
-    this.GAMESTAG = "zGamez";
-    this.BLOGTAG = "MiNdFuKcFaIrYTaLeS";
+    this.FREELANCETAG = "Whatever";
+    this.NEWSTAG = "NOTHING_txt";
+    this.GAMESTAG = "eh";
+    //this.BLOGTAG = "MiNdFuKcFaIrYTaLeS";
+    this.BLOGTAG = "MFFT";
     
     this.headerCLR1 = GLOBALDATA.CLR_WHITE;
     this.headerCLR2 = GLOBALDATA.CLR_WHITE;//HL_CLR4;
@@ -51,9 +52,11 @@ var MainMenu = function () {
         var ht = "   __________  ___    ______________________________ __<br/>"
         ht +=    "  / ____/ __ \\/   |  / ____/ ____/  _/_  __/ ____/ //_/<br/>";
         ht +=    " / / __/ /_/ / /| | / /_  / /_   / /  / / / __/ / ,<   <br/>";
-        ht +=    "/ /_/ / _, _/ ___ |/ __/ / __/ _/ /  / / / /___/ /| |_  <br/>";
-        ht +=    "\\____/_/ |_/_/  |_/_/   /_/   /___/ /_/ /_____/_/ |_(_)  <br/>";
         
+        ht +=    "/ /_/ / _, _/ ___ |/ __/ / __/ _/ /  / / / /___/ /| |_  <br/>";
+        /*
+        ht +=    "\\____/_/ |_/_/  |_/_/   /_/   /___/ /_/ /_____/_/ |_(_)  <br/>";
+        */
         
         ht = ht.replace ( / /g, "&nbsp;" ); 
 
@@ -62,10 +65,12 @@ var MainMenu = function () {
         var ht2 = "   _____ _                      _____                 <br/>";
         ht2 +=    "  / ___/(_)___ ___  ____  ____ / ___/____ ___  ________<br/>";
         ht2 +=    "  \\__ \\/ / __ `__ \\/ __ \\/ __ \\\\__ \\/ __ `/ / / / ___(_)<br/>";
+        
         ht2 +=    " ___/ / / / / / / / /_/ / / / /__/ / /_/ / /_/ (__  ) <br/>";
+        /*
         ht2 +=    "/____/_/_/ /_/ /_/\\____/_/ /_/____/\\__,_/\\__, /____(_)  <br/>";
         ht2 +=    "                                        /____/        <br/>";
-
+        */
         ht2 = ht2.replace ( / /g, "&nbsp;" ); 
         //log ( "ht: " + ht );
         
@@ -193,7 +198,7 @@ var MainMenu = function () {
             this.top = HEIGHT / 5;
         }
         else if ( this.currentTopic === "#button_" + this.BLOGTAG ) {
-            this.top = HEIGHT - 116;
+            this.top = HEIGHT - 90;
         }
         else {
             this.top = 10;
@@ -205,8 +210,8 @@ var MainMenu = function () {
         });
         
         
-        var headerbartop = 58;//65;
-        var buttonbarleft = 440;
+        var headerbartop = 0;//58;//65;
+        var buttonbarleft = 240;//440;
         var buttonbartop = 19;
         var topiccontainertop = 96;
         var quoteheight = 100;
@@ -276,7 +281,7 @@ var MainMenu = function () {
         */
         
         
-        var duration = fix? 0 : 500;
+        var duration = fix? 0 : 200;
         
         var nch = footertop - menudivtop - quoteheight - 20;
         
