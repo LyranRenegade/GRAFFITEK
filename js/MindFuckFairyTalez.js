@@ -77,7 +77,26 @@ var Mfft = function () {
         "playing", "playful", "playfulness", "paradise", "mirth", "merry", "merriment", "hilarity", "seventh", "ecstasy",
         "exhilaration", "exhhilarating", "nihil", "nihilism", "elated", "exuberance", "to", "to", "too", "at", "in",
         "Asgard", "Tuoni", "tuonela", "sisu", "shaman", "guru", "ritual", "rite", "abra", "cadabra", "hocus", "pocus",
-        "transport", "Yeshua", "Yoshua", "Aleph", "atom"
+        "transport", "Yeshua", "Yoshua", "Aleph", "atom", "but", "what", "why", "how", "who", "whom", "whose", "they", "them",
+        "other", "others", "i", "iam", "self", "alone", "allone", "one", "not", "two", "law", "of", "change", "confusion", "con", 
+        "fusion", "in", "on", "for", "by", "at", "with", "together", "also", "as", "well", "yes", "no", "not", "yeah", "ok", "fuck",
+        "stellar", "astromonocol", "feciltretoire", "a", "an", "and", "or", "perhaps", "often", "never", "some", "times", "sometimes",
+        "many", "few", "a lot", "always", "all", "ways", "como", "que", "quando", "quanto", "alli", "aqui", "aqua", "water", "air", "wind",
+        "fire", "flower", "tree", "earth", "planet", "water", "river", "sea", "ocean", "waves", "wave", "frequency", "motion", "physica",
+        "cold", "hot", "warm", "ice", "gas", "solid", "fix", "fixed", "ever", "presence", "to", "also", "cannot", "fine", "sad", "angry",
+        "honny", "rancid", "health", "whenever", "then", "there", "amen", "and", "or", "up", "on", "down", "aside", "between", "against",
+        "before", "after", "within", "without", "whenever", "however", "indeed", "unknown", "known", "un", "now", "future", "past", "time",
+        "chronos", "titan", "god", "GOD", "great self", "under", "above", "meta", "sub", "cult", "culture", "tbh", "tf", "af", "wtf", "tu",
+        "sb", "yd", "sure", "ofc", "oh", "eh", "ehm", "uhm", "hmm", "uch", "ay", "yo", "aye", "na", "nada", "de", "da", "ALERT", "WakeTFUp",
+        "so", "such", "do", "re", "mi", "fa", "sol", "la", "si", "sin", "sans", "rim", "anal", "astral", "nude", "naked", "empty", "void",
+        "isness", "out", "over", "it", "is", "act",
+        "James Maynard Keenan", "Trent Reznor", "Gibby Haines", "Paul Leary", "Alejandro Jodorowski", "Jim Carrey", "Bill Murray", "Trump",
+        "David Eugene Edwards", "Eugene Robinson", "James Mahu", "Bob Marley", "LF Celine", "Cortazar", "Julio Borges", "Marquez", "Brecht",
+        "Samuel Beckett", "Mooji", "Osho", "Papaji", "Ramana", "Maharsi", "Nassim Haramein", "Eugene Hutz", "Aurora", "Nina Hagen", "Kate Bush",
+        "Kurt Vonnegut", "Roots Manuva", "Prince", "Andrew Eldritch", "Carlos Castaneda", "Taras Bulba", "Anna Breytenbach", "Thirlwell", 
+        "Jaroslav Hlasek", "Bela Tarr", "Emir Kusturica", "Aki Kaurismaki", "Brain Eno", "Paul Laffoley", "Al Jourgensen", "Max Keiser",
+        "Udo Ulfkotte", "Ole Dammegard", "David Icke", "Bradley/Chelsea Manning", "Julian Assange", "Edward Snowden", "Russell Brand",
+        "Miles Mathis", "Eckhart Tolle", "Nikolai Tesla", "Arcturus Ra", "Mike Patton", "Bruce Lee", "Greg Braden", "Abby Normal", "Lyran Renegade"
         
     ];
     
@@ -205,7 +224,7 @@ var Mfft = function () {
         var ended;
 
         var TMP_WORD_RAN_AMOUNT = this.CONTINUES_FUNCTION? 22 : 8;
-       
+        var TMP_LETTER_RAN_AMOUNT = this.CONTINUES_FUNCTION? 22 : 8;       
 
         for ( i = 0; i < aos; i ++ ) {
             sentence = "";
@@ -213,6 +232,7 @@ var Mfft = function () {
             for ( j = 0; j < aow; j ++ ) {
                 word = "";
                 aol = 2 + Math.floor ( 8 * Math.random () );
+                if ( Math.random () < .3 ) aol = Math.ceil ( aol / 2 );
                 
                 if ( Math.random () < .02 ) colorchar = "^";
                 else if ( Math.random () < .02 ) colorchar = "$";
