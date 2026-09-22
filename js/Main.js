@@ -65,14 +65,41 @@ var GlobalData = function () {
     this.CLR_DARKGREY = "#666666";
     //http://colorschemedesigner.com/csd-3.5/#2K32Pw0w0w0w0
     
-    this.HL_CLR1 = "#FFFF99";//"#fff800";//
-    this.HL_CLR2 = "#cccccc";//"#05e937";//
-    this.HL_CLR3 = "#ff99cc";//"#FA3E54";//"#F5001D";
-    this.HL_CLR4 = "#ffff33";
-    this.HL_CLR5 = "#ffccff";
-    this.DL_CLR1 = "#ff00ff";//"#059a25";//
-    this.DL_CLR2 = "#99ff33";//"#9e055c";//
-    this.DL_CLR3 = "#cc33ff";
+
+    if ( Math.random () < .3 ) {
+        log ( "COLORSCHEME 1" );
+        this.HL_CLR1 = "#00FFff";
+        this.HL_CLR2 = "#cccccc";
+        this.HL_CLR3 = "#6600ff";
+        this.HL_CLR4 = "#ffcc00";
+        this.HL_CLR5 = "#ffccff";
+        this.DL_CLR1 = "#ff00ff";
+        this.DL_CLR2 = "#0000cc";
+        this.DL_CLR3 = "#ff33cc";
+    }
+    else if ( Math.random () < .5 ) {
+        log ( "COLORSCHEME 2" );
+        this.HL_CLR1 = "#FFcc00";//"#fff800";//
+        this.HL_CLR2 = "#cccccc";//"#05e937";//
+        this.HL_CLR3 = "#cc3366";//"#FA3E54";//"#F5001D";
+        this.HL_CLR4 = "#cc00ff";
+        this.HL_CLR5 = "#ccffcc";
+        this.DL_CLR1 = "#00ff00";//"#059a25";//
+        this.DL_CLR2 = "#00cc00";//"#9e055c";//
+        this.DL_CLR3 = "#33ccff";
+    }
+    else {
+        log ( "COLORSCHEME 0" );
+        this.HL_CLR1 = "#FFFF00";//"#fff800";//
+        this.HL_CLR2 = "#cccccc";//"#05e937";//
+        this.HL_CLR3 = "#ff0066";//"#FA3E54";//"#F5001D";
+        this.HL_CLR4 = "#00ccff";
+        this.HL_CLR5 = "#ffccff";
+        this.DL_CLR1 = "#ff00ff";//"#059a25";//
+        this.DL_CLR2 = "#cc0000";//"#9e055c";//
+        this.DL_CLR3 = "#cc33ff";            
+    }
+    
     
     this.NEWS_BACKGROUND_ALPHA = 0.6;
     
@@ -139,6 +166,10 @@ function start () {
         window.onpopstate = _onPopPage;
       
         FIRSTVISIT = false;
+
+
+
+
     }
      
     _initialize ();
@@ -160,6 +191,9 @@ function _initialize () {
     UNIVERSE = new Universe ();
     MOUSEHANDLER = new MouseHandler ();
     GLOBALDATA = new GlobalData ();
+
+
+
     CAMERA = new Camera ();
     //SERVERDATA = new ServerData ( true );
     ANIMATORCONTROLLER = new AnimatorController ();

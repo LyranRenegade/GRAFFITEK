@@ -41,23 +41,18 @@ var Star = function ( id, initpoint, system, centerstar ) {
             
     this.size = 50 + Math.round ( 100 * Math.random () );
     //this.size *= 50;
-    this.clr = GLOBALDATA.CLR_WHITE;//"#ffffff";
+    this.clr = GLOBALDATA.DL_CLR2;//"#FF0000";//GLOBALDATA.CLR_WHITE;//"#ffffff";
     
-    if ( Math.random () < .01 ) {
+    if ( Math.random () < .3 ) {
         this.clr = GLOBALDATA.HL_CLR1;
     }
-    else if ( Math.random () < .01 ) {
+    else if ( Math.random () < .2 ) {
         this.clr = GLOBALDATA.HL_CLR2;
     }
-    else if ( Math.random () < .01 ) {
+    else if ( Math.random () < .1 ) {
         this.clr = GLOBALDATA.HL_CLR3;
     }    
-    else if ( Math.random () < .01 ) {
-        this.clr = GLOBALDATA.DL_CLR1;
-    }
-    else if ( Math.random () < .01 ) {
-        this.clr = GLOBALDATA.DL_CLR2;
-    }    
+  
     
     this.connections = [];
     

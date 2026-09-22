@@ -629,7 +629,7 @@ var StarStorm = function () {
                                     }
                                 }
                                 ctx.stroke ();
-                                ctx.fill ();
+                                //ctx.fill ();
                                 ctx.closePath ();
                                 //ctx.stroke (); 
                                 

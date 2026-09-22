@@ -240,7 +240,7 @@ var UFO = function ( id ) {
     
     
     this.speed = 0;
-    this.maxspeed = 50;
+    this.maxspeed = 5;
     this.acceleration = 0;
     
     
@@ -266,13 +266,13 @@ var UFO = function ( id ) {
     
     
     this.newSpeed = function () {
-        var divisor = ( this.mode === this.MODE_EXPLORATION )? 10 : 60;
+        var divisor = ( this.mode === this.MODE_EXPLORATION )? 30 : 60;
         return ( 1 - ( 2 * Math.random () ) ) / divisor;
     };
     
     this.newAcceleration = function () {
-        var acc = 20 - ( 40 * Math.random () );
-        if ( this.mode === this.MODE_MANEUVER ) acc *= 10;
+        var acc = 15 - ( 30 * Math.random () );
+        if ( this.mode === this.MODE_MANEUVER ) acc *= 1.5;
         return acc;
     };
     
@@ -282,8 +282,8 @@ var UFO = function ( id ) {
         if ( this.mode === this.MODE_EXPLORATION ) this.mode = this.MODE_MANEUVER;
         else this.mode = this.MODE_EXPLORATION;
         
-        this.maxspeed = ( this.mode === this.MODE_EXPLORATION )? 50 : 5000;
-        this.modecount = ( this.mode === this.MODE_EXPLORATION )? -50 : 0;
+        this.maxspeed = ( this.mode === this.MODE_EXPLORATION )? 22 : 77;
+        this.modecount = ( this.mode === this.MODE_EXPLORATION )? -20 : 0;
         
         //this.acceleration = this.newAcceleration ();
         //log ( "ufo " + this.id + " new mode: " + this.mode );

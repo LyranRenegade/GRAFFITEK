@@ -90,13 +90,20 @@ var Mfft = function () {
         "sb", "yd", "sure", "ofc", "oh", "eh", "ehm", "uhm", "hmm", "uch", "ay", "yo", "aye", "na", "nada", "de", "da", "ALERT", "WakeTFUp",
         "so", "such", "do", "re", "mi", "fa", "sol", "la", "si", "sin", "sans", "rim", "anal", "astral", "nude", "naked", "empty", "void",
         "isness", "out", "over", "it", "is", "act",
-        "James Maynard Keenan", "Trent Reznor", "Gibby Haines", "Paul Leary", "Alejandro Jodorowski", "Jim Carrey", "Bill Murray", "Trump",
-        "David Eugene Edwards", "Eugene Robinson", "James Mahu", "Bob Marley", "LF Celine", "Cortazar", "Julio Borges", "Marquez", "Brecht",
-        "Samuel Beckett", "Mooji", "Osho", "Papaji", "Ramana", "Maharsi", "Nassim Haramein", "Eugene Hutz", "Aurora", "Nina Hagen", "Kate Bush",
-        "Kurt Vonnegut", "Roots Manuva", "Prince", "Andrew Eldritch", "Carlos Castaneda", "Taras Bulba", "Anna Breytenbach", "Thirlwell", 
-        "Jaroslav Hlasek", "Bela Tarr", "Emir Kusturica", "Aki Kaurismaki", "Brain Eno", "Paul Laffoley", "Al Jourgensen", "Max Keiser",
-        "Udo Ulfkotte", "Ole Dammegard", "David Icke", "Bradley/Chelsea Manning", "Julian Assange", "Edward Snowden", "Russell Brand",
-        "Miles Mathis", "Eckhart Tolle", "Nikolai Tesla", "Arcturus Ra", "Mike Patton", "Bruce Lee", "Greg Braden", "Abby Normal", "Lyran Renegade"
+        "James", "Maynard", "Keenan", "Trent", "Reznor", "Gibby" ,"Haines", "Paul", "Leary", "Jimmy", "Jim", "Alejandro", "Jodorowski", 
+        "Jim", "Carrey", "Bill", "Murray", "Trump", "David", "Eugene", "Edwards", "Robinson", "Mahu", "Marley", "LF Celine", "Cortazar", "Julio", "Borges", 
+        "Marquez", "Brecht", "Samuel", "Beckett", "Tolstoj", "Gogol", "Mooji", "Osho", "Papaji", "Ramana", "Maharsi", "Nassim", "Haramein", "Hutz", "Aurora", 
+        "Nina", "Hagen", "Kate", "Bush", "Kurt" , "Vonnegut", "Roots", "Manuva", "Prince", "Tricky", "Andrew", "Eldritch", "Carlos", "Castaneda", "Taras",
+        "Bulba", "Anna", "Breytenbach", "Thirlwell", "Jaroslav", "Hlasek", "Bela", "Tarr", "Emir", "Kusturica", "Aki", "Kaurismaki", 
+        "Brian", "Eno", "Laffoley", "Al", "Jourgensen", "Max", "Keiser", "Udo", "Ulfkotte", "Ole", "Olle", "Dammegard", "David", "Icke", 
+        "Bradley", "Chelsea", "Manning", "Julian", "Assange", "Edward", "Snowden", "Russell", "Brand", "Wim", "Hof", "Miles",
+        "Mathis", "Eckhart", "Tolle", "Nikolai", "Tesla", "Arcturus", "Ra", "Mike", "Patton", "Bruce", "Lee", "Greg", "Braden", "Abby" ,"Normal", 
+        "Renegade", "Lyran",
+        "(!)", "(?)", "(?!)", "(!!)", "!!", "??", "!?", "?!", "? ? ?", "S.", "Mr. B.", "Flux Wildly", "flux", "wild", "Cobain", "Morrison",
+        "Van", "Morisson", "whatever", "fake", "false", "nope", "anything", "really", "real", "reality", "3d", "4d", "5d", "6d", "7d", "8d", "9d",
+        "10d", "11d", "12d", "1d", "2d", "13d", "zvuki mu", "ITS ALL YOU", "alien", "extra", "terrestial", "terra", "petra",
+        "Carl", "Einar", "Hackner", "Mrs. C", "Hellman", "J", "Seaman", "quasi", "semi"
+
         
     ];
     
@@ -161,17 +168,22 @@ var Mfft = function () {
     this.initialze = function () {
         this.WORDAMOUNT = this.words.length;
         this.BASE_TEXTTICKER = new TextTicker ( [], this.basetextlines, "mindfuckcanvas" );
+        this.BASE_TEXTTICKER.font = "8pt roboto_mono_regular";
+        this.BASE_TEXTTICKER.charwidth = 5;
+        this.BASE_TEXTTICKER.lineheight = 10;
+
         this.BASE_TEXTTICKER.initialize ();
         this.MF_TEXTTICKER = new TextTicker ( [], [], "mindfuckcanvas1" );
         this.MF_TEXTTICKER.autoScrollDown = true;
         this.MF_TEXTTICKER.offsetY = 50;
+        
+        this.MF_TEXTTICKER.font = "10pt roboto_mono_regular";
+        this.MF_TEXTTICKER.charwidth = 7;
+        this.MF_TEXTTICKER.lineheight = 14;
         this.MF_TEXTTICKER.initialize ();
         this.MF_TEXTTICKER.allshown = true;
-        /*
-        this.TEXTTICKER.font = "10pt roboto_mono_regular";
-        this.TEXTTICKER.charwidth = 7;
-        this.TEXTTICKER.lineheight = 16;
-        this.TEXTTICKER.initialize ();*/
+
+
         $ ( document ).on ( "newMainTopic", $.proxy ( this, "_newMainTopic" ));
         
         $ ( "#mindfuckcanvas" ).css ( "display", "none" );
@@ -219,7 +231,7 @@ var Mfft = function () {
         var charcode;
         var text = [];
         var aow, aol;
-        var colorchar;
+        var colorchar = "";
         var wi;
         var ended;
 
@@ -234,30 +246,42 @@ var Mfft = function () {
                 aol = 2 + Math.floor ( 8 * Math.random () );
                 if ( Math.random () < .3 ) aol = Math.ceil ( aol / 2 );
                 
-                if ( Math.random () < .02 ) colorchar = "^";
-                else if ( Math.random () < .02 ) colorchar = "$";
-                else if ( Math.random () < .02 ) colorchar = "%";
-                else if ( Math.random () < .02 ) colorchar = "#";
-                else if ( Math.random () < .02 ) colorchar = "|";
-                else if ( Math.random () < .02 ) colorchar = "'";
-                else if ( Math.random () < .02 ) colorchar = "\"";
-                else if ( Math.random () < .02 ) colorchar = "`";
-                else colorchar = "";
+
+                if ( colorchar == "" )  {
+                    if ( Math.random () < .05 ) colorchar = "^";
+                    else if ( Math.random () < .15 ) colorchar = "$";
+                    else if ( Math.random () < .12 ) colorchar = "%";
+                    else if ( Math.random () < .09 ) colorchar = "#";
+                    else if ( Math.random () < .06 ) colorchar = "|";
+                    else if ( Math.random () < .05 ) colorchar = "'";
+                    else if ( Math.random () < .05 ) colorchar = "\"";
+                    else if ( Math.random () < .05 ) colorchar = "`";
+                    else if ( Math.random () < .05 ) colorchar = " ";
+                    
+                }
+                else if ( Math.random () < .25 ) colorchar = "";
+
                 word += colorchar;
                 
                 
                 if ( Math.random () < .6 ) {
+                    //print an actual word from the list ^^
                     wi = Math.floor ( this.WORDAMOUNT * Math.random () );
                     char = this.words [ wi ];
+                    var capitalizeAll = ( Math.random () < .1 )? true : false;
                     if ( j === 0 ) {
-                        char = char.substr ( 0, 1 ).toUpperCase () + char.substr ( 1 );
+                        //capitalize first letter of sentence?
+                        char = char.substring ( 0, 1 ).toUpperCase () + char.substring ( 1 );
                     }
                     wl = char.length;
                     for ( l = 0; l < wl; l ++ ) {
                         if ( Math.random () < ( garblechance / 2 ) ) {
-                            char = char.substring ( 0, l ) + this._getGarbleChar () + char.substr ( l + 1 );
+                            char = char.substring ( 0, l ) + this._getGarbleChar () + char.substring ( l + 1 );
                             //break;
                         }
+                    }
+                    if ( capitalizeAll ) {
+                        char = char.toUpperCase ();
                     }
                     word += char;
                 }
@@ -270,6 +294,12 @@ var Mfft = function () {
                     }
                 }
                 else {
+                    //ramdom mishmash of letters
+
+                    var capitalizeAll = ( Math.random () < .6 )? true : false;
+                    if ( capitalizeAll ) {
+                        aol = Math.ceil ( aol / 2 );
+                    }
                     for ( k = 0; k < aol; k ++ ) {
                         char = this._getWeightedLetter ();
                         if ( ( j === 0 && k === 0 ) || ( k === 0 && Math.random () < 0.05 ) ) {
@@ -291,7 +321,9 @@ var Mfft = function () {
                         else {
                             charcode = 97 + Math.floor ( ( 26 ) * Math.random () );
                         }*/
-                        
+                        if ( capitalizeAll ) {
+                            char = char.toUpperCase ();
+                        }                        
                         word += char;
                     }
                 }
@@ -314,7 +346,7 @@ var Mfft = function () {
                 if ( j < ( aow - 1 ) ) sentence += " ";
                 else {
                     ended = false
-                    while ( Math.random () < 0.1 ) {
+                    while ( Math.random () < 0.15 ) {
                         if ( Math.random () < .4 ) sentence += "!";
                         else sentence += "?";
                         ended = true;
@@ -322,7 +354,7 @@ var Mfft = function () {
                     //else if ( Math.random () < 0.2 ) sentence += "?";
                     if ( !ended ) sentence += ".";
                 }
-                if ( Math.random () < .05 ) sentence += "*";
+                while ( Math.random () < .05 ) sentence += "*";
             }
             text.push ( sentence );
         }
