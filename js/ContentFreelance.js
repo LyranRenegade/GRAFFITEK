@@ -39,9 +39,9 @@ var ContentFreelance = function () {
         this.TEXTTICKER.autoScrollDown = true;
         this.TEXTTICKER.bottomroom = 60;
 
-        //this.TEXTTICKER.font = "10pt roboto_mono_regular";
-        //this.TEXTTICKER.charwidth = 7;
-        //this.TEXTTICKER.lineheight = 14;
+        this.TEXTTICKER.font = "10pt roboto_mono_regular";
+        this.TEXTTICKER.charwidth = 7;
+        this.TEXTTICKER.lineheight = 14;
         
         
         this.TEXTTICKER.initialize ();

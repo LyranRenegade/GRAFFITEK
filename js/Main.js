@@ -21,7 +21,7 @@ var MAINFOOTER = null;
 var MFFT = null;
 
 var FRAMECOUNTER = 0;
-var FRAMEDELAY = 1;
+var FRAMEDELAY = 2;
 var FIRSTVISIT = true;
 
 

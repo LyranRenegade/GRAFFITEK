@@ -14,7 +14,7 @@ var TextTicker = function ( linklabels, textlines, ctxid ) {
     
     this.ctxid = ctxid;
     this.ctx = getContext ( ctxid );
-    this.offsetX = 13;
+    this.offsetX = 33;//13;
     this.offsetY = 0;
             
     this.linklabels = linklabels;
@@ -310,7 +310,8 @@ var TextTicker = function ( linklabels, textlines, ctxid ) {
                     //this._installLinks ();
                     this.setActive ( false );
                     /*UGLY HACK DONT ASK*/
-                    MFFT.TextTickerSaysImDone ();
+                    this.tellReady ();
+                    
                     
                 }
                 else {
@@ -372,6 +373,12 @@ var TextTicker = function ( linklabels, textlines, ctxid ) {
             }
         }
     };*/
+
+    this.tellReady = function () {
+        log ( 'textticked tellReady placeholder function' );
+        
+
+    };
     
     this._scrollDown = function ( lineamount ) {
         this.scrollY += lineamount;
@@ -423,8 +430,11 @@ var TextTicker = function ( linklabels, textlines, ctxid ) {
         if ( this.installed && !this.hidden ) {
             this._refreshPage ();
         }
+        this.screenResized ();
         
     };
+
+    this.screenResized = function () {};
     
     //this.initialize ();
     
