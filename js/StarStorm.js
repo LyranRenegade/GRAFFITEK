@@ -61,11 +61,11 @@ var StarStorm = function () {
         ctx.fillStyle = GLOBALDATA.CLR_WHITE;
         
         
-        for ( i = 0; i < 1; i ++ ) {
+        for ( i = 0; i < 9; i ++ ) {
             this.ufos.push ( new UFO ( i ) );
         }
-        for ( i = 0; i < 1; i ++ ) {
-            this.ufos.push ( new UFO2 ( i + 5 ) );
+        for ( i = 0; i < 3; i ++ ) {
+            this.ufos.push ( new UFO2 ( i + 9 ) );
         }
         
 
@@ -463,7 +463,7 @@ var StarStorm = function () {
                             ddl = ddatas.length;
 
                             ctx.strokeStyle = ufo.getColor ( 0.6, 0.9 );//"rgba(100,100,100,0.5)";
-                            ctx.lineWidth = 10 * ( ddata.s );
+                            ctx.lineWidth = 3 * ( ddata.s );
                             ctx.lineCap = "round";
                             ctx.beginPath ();
                             ctx.moveTo ( ddata_a.x, ddata_a.y );
@@ -511,8 +511,8 @@ var StarStorm = function () {
                                 ctx.beginPath();
                                 ctx.arc ( ddatas [ j ].x, ddatas [ j ].y , radius, 0, 2 * Math.PI, false );
                                 ctx.closePath ();
-                                //ctx.stroke (); 
-                                ctx.fill ();
+                                ctx.stroke (); 
+                                //ctx.fill ();
                             }
                         }
                         else if ( ufo.type === "2" ) {
@@ -525,7 +525,7 @@ var StarStorm = function () {
 
 
                             ctx.strokeStyle = ufo.getColor ( 1, 1 );//"rgba(100,100,100,0.5)";
-                            ctx.lineWidth = 5 * ( ddata.s );
+                            ctx.lineWidth = 3 * ( ddata.s );
                             //ctx.lineCap = "round";
                             /*
                             ctx.beginPath ();

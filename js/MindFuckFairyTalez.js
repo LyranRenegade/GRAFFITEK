@@ -143,6 +143,7 @@ var Mfft = function () {
         
     ];
     this.commonlettercombo = [ 
+        " ", "  ", "   ", "    ",
         "am","an","as","at","be","by","do","go","he","if","in","is","it","me","my","no","of","oh","on","or","ox","so","to","up","us",
         "we","ad","ah","ai","al","aw","ax","ay","ba","bi","bo","da","de","ed","ef","eh","el","em","en","er","es","et","ex","fa","fe",
         "gi","ha","hi","hm","ho","id","io","ja","jo","ka","ki","ko","la","li","lo","ma","mi","mm","mo","mu","na","ne","nu","od","oe",
@@ -261,7 +262,7 @@ var Mfft = function () {
     ];
     
     this.basetextlines = [ "`..rancom]..<<`", "|*****<<****<<****<<<**<<<<<**<<<<<<|" ];// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< " ];
-    this.footertextlines = [ "nothing is happening.." ];// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< " ];
+    this.footertextlines = [ "%nothing is happening..%" ];// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< " ];
      /*
      * RESERVED SIGNS
      * ^: CLR_1
@@ -308,9 +309,9 @@ var Mfft = function () {
         this.LF_TEXTTICKER.font = "9pt roboto_mono_regular";
         this.LF_TEXTTICKER.charwidth = 6;
         this.LF_TEXTTICKER.lineheight = 12;
-        this.LF_TextTickerScreenResize ();        
+         
         this.LF_TEXTTICKER.initialize ();
-
+        this.LF_TextTickerScreenResizePre ();       
 
         $ ( document ).on ( "newMainTopic", $.proxy ( this, "_newMainTopic" ));
         
@@ -319,16 +320,21 @@ var Mfft = function () {
         
 
         this.MF_TEXTTICKER.tellReady = this.TextTickerSaysImDone.bind(this);
-        this.LF_TEXTTICKER.screenResized = this.LF_TextTickerScreenResize.bind(this);
+        this.LF_TEXTTICKER.screenResizePre = this.LF_TextTickerScreenResizePre.bind(this);
 
 
         //this.TEXTTICKER.setActive ( true );
         
     };
 
-    this.LF_TextTickerScreenResize = function () {
-        this.LF_TEXTTICKER.offsetY = HEIGHT - 120;
-        this.LF_TEXTTICKER.offsetX = WIDTH - 320;
+    this.LF_TextTickerScreenResizePre = function () {
+        var top = HEIGHT - 90;//$('#mainmenu').offset().top;
+        var left = $('#headerbar').offset().left;
+        var width = $('#headerbar').outerWidth();
+        log ( "HEADERBAR AT: " + top + ", " + left + ", w: " + width );
+
+        this.LF_TEXTTICKER.offsetY = top - 23;
+        this.LF_TEXTTICKER.offsetX = width - 133;
         log ( "         this.LF_TextTickerScreenResize () x,y: " + this.LF_TEXTTICKER.offsetX + ", " +  this.LF_TEXTTICKER.offsetY );
     };
     
@@ -528,7 +534,7 @@ var Mfft = function () {
     this._generateRandomLines = function () {
         
         var randomlines = [
-            "Que<<<Hora<<<<Es<<?<"
+            
 
 
         ];
@@ -613,16 +619,14 @@ var Mfft = function () {
             randomlines.push ( ranline );
         }
 
-
-            /*
         var randomlines = [
-            "Weakness only exists because of strength... <<<<<<<<<<<<< (the absence of) Strength.",
-            "True<<<<Real <<<<<^i<Intelligence^ / LOGOS <<<<<<<< is merely <<<<<<<an exhibition of divine %love% through attention and $focus$.",
-            "$FEAR$. .  .   . * shows what you #wrongly believe#.. <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<",
-            ".*.*.*.*.*.**.*.*.<<7< ",
-            "The opposite of true <<<<.divine <<<<<<. %love% is $hate$ <<<<<^FEAR^ <<<<<%indifference% *<<<<<<<<<<<<<#judgement#"
-            
-        ];*/   
+          "","","" ,"","",""
+
+
+        ];
+
+
+
         return randomlines;     
 
     }; 
@@ -779,17 +783,26 @@ var Mfft = function () {
             
             $ ( "#mindfuckcanvas" ).fadeIn ( 500, false );
             $ ( "#mindfuckcanvas1" ).fadeIn ( 500, false );
+            $ ( "#mindfuckcanvas2" ).fadeIn ( 500, false );
             $ ( document ).on ( MOUSEHANDLER.CLICK, $.proxy ( this, "_checkPixel" ) );
         }
         else {
             $ ( "#mindfuckcanvas" ).fadeOut ( 100, false );
             $ ( "#mindfuckcanvas1" ).fadeOut ( 100, false );
+            $ ( "#mindfuckcanvas2" ).fadeOut ( 100, false );
+
             
         }
         this.CONTINUES_FUNCTION = false;
         this.BASE_TEXTTICKER.setActive ( this.active );
         this.MF_TEXTTICKER.setActive ( this.active );
         this.LF_TEXTTICKER.setActive ( this.active );
+
+
+        this.BASE_TEXTTICKER.setHidden ( !this.active );
+        this.MF_TEXTTICKER.setHidden ( !this.active );
+        this.LF_TEXTTICKER.setHidden ( !this.active );
+
     };
     
     

@@ -70,7 +70,7 @@ var GlobalData = function () {
         log ( "COLORSCHEME 1" );
         this.HL_CLR1 = "#00FFff";
         this.HL_CLR2 = "#cccccc";
-        this.HL_CLR3 = "#6600ff";
+        this.HL_CLR3 = "#9900ff";
         this.HL_CLR4 = "#ffcc00";
         this.HL_CLR5 = "#ffccff";
         this.DL_CLR1 = "#ff00ff";
@@ -358,13 +358,14 @@ function _frameTick () {
 
 
 function animloop () {
-    $ ( document ).trigger ( "frameTick" );
+    
   //log ( "animloop" );
   requestAnimFrame ( animloop );
   
   if ( FRAMECOUNTER >= FRAMEDELAY ) {
       FRAMECOUNTER = 0;
      _frameTick ();
+     $ ( document ).trigger ( "frameTick" );
    }
    FRAMECOUNTER ++;
 }

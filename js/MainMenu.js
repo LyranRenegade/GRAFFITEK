@@ -211,19 +211,21 @@ var MainMenu = function () {
         
         
         var headerbartop = 0;//58;//65;
-        var buttonbarleft = 240;//440;
+        var buttonbarleft = WIDTH / 6.3;//240;//440;
         var buttonbartop = 19;
         var topiccontainertop = 96;
         var quoteheight = 100;
         var footertop = HEIGHT - 40;//35;
-        
+        /*
         if ( WIDTH < 1050 ) {
             buttonbarleft = -17;
             buttonbartop += 40;
             headerbartop += 40;
             topiccontainertop += 40;
-        }
-        
+        }*/
+
+
+
         var menudivtop = this.top + topiccontainertop;
         
         $ ( "#buttonbar" ).css ( {

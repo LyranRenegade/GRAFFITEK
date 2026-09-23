@@ -389,7 +389,8 @@ var TextTicker = function ( linklabels, textlines, ctxid ) {
         log ( "refreshpage: " + this.ctxid );
         var active = this.active;
         this.setActive ( false );
-        this.ctx.clearRect ( this.offsetX, this.offsetY, WIDTH, HEIGHT );
+        //this.ctx.clearRect ( this.offsetX, this.offsetY, WIDTH, HEIGHT );
+        this.ctx.clearRect ( 0, 0, WIDTH, HEIGHT );
         
         this.LINK = false;
         this.ESCAPENEXT = false;
@@ -409,7 +410,9 @@ var TextTicker = function ( linklabels, textlines, ctxid ) {
     
     this._resizeScreen = function () {
         //if ( this.hidden === true ) return;
-        //log ( "textticker.resizescreen: " + this.ctxid + " fs: " + this.caretindex.fs );
+        this.screenResizePre ();
+
+        log ( "textticker.resizescreen: " + this.ctxid + " fs: " + this.caretindex.fs +" visible: " + !this.hidden + " installed? " + this.installed );
         this.ctx.font = this.font;//"12pt roboto_mono_regular";
         this.ctx.fillStyle = this.caretindex.fs;
         this.ctx.strokeStyle = this.caretindex.fs;
@@ -430,11 +433,11 @@ var TextTicker = function ( linklabels, textlines, ctxid ) {
         if ( this.installed && !this.hidden ) {
             this._refreshPage ();
         }
-        this.screenResized ();
+        
         
     };
 
-    this.screenResized = function () {};
+    this.screenResizePre = function () {};
     
     //this.initialize ();
     
