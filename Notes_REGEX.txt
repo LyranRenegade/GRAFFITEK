@@ -1,0 +1,17 @@
+Notes
+
+REGEX
+.    any character
+*    zero or more
++    one or more
+?    optional
+^    beginning
+$    end
+[ ]  one character from this set
+( )  group this
+|    OR
+
+
+\d    digit
+\w    word character
+\s    whitespace

@@ -1,5 +1,6 @@
 
 var UFO2 = function ( id ) {
+    //the spacecraft round thingy
     this.id = id;
     this.rgb = [ 255, 255, 208 ];
     this.alpha = 0.1;
@@ -51,7 +52,7 @@ var UFO2 = function ( id ) {
     
     
     this.newSpeed = function () {
-        var divisor = ( this.mode === this.MODE_EXPLORATION )? 30 : 120;
+        var divisor = ( this.mode === this.MODE_EXPLORATION )? 60 : 120;
         return ( 1 - ( 2 * Math.random () ) ) / divisor;
     };
     
@@ -67,8 +68,8 @@ var UFO2 = function ( id ) {
         if ( this.mode === this.MODE_EXPLORATION ) this.mode = this.MODE_MANEUVER;
         else this.mode = this.MODE_EXPLORATION;
         
-        this.maxspeed = ( this.mode === this.MODE_EXPLORATION )? 15 : 10000;
-        this.modecount = ( this.mode === this.MODE_EXPLORATION )? -150 : 0;
+        this.maxspeed = ( this.mode === this.MODE_EXPLORATION )? 15 : 500;
+        this.modecount = ( this.mode === this.MODE_EXPLORATION )? -50 : -50;
         
         //this.acceleration = this.newAcceleration ();
         //log ( "ufo " + this.id + " new mode: " + this.mode );
